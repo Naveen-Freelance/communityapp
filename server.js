@@ -23,7 +23,10 @@ var business_card_image_path = '/Users/Travelog/Naveen/Personal/Naveen-Professio
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port     = process.env.PORT || 8080; // set our port
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+//var port     = process.env.PORT || 8080; // set our port
 
 var mongoose   = require('mongoose');
 //mongoose.connect('mongodb://localhost:27017/Iganiq8o'); // connect to our database
